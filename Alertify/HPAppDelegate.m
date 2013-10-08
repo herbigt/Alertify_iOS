@@ -7,6 +7,8 @@
 //
 
 #import "HPAppDelegate.h"
+#import "HPAlarmListViewController.h"
+#import "HPAlarmListFlowLayout.h"
 
 @implementation HPAppDelegate
 
@@ -14,7 +16,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
+    
+    HPAlarmListFlowLayout *layout = [[HPAlarmListFlowLayout alloc] init];
+    HPAlarmListViewController *list = [[HPAlarmListViewController alloc] initWithCollectionViewLayout:layout];
+    self.window.rootViewController = list;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
