@@ -17,8 +17,6 @@
 		3A21320B180474A500916058 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A21320A180474A500916058 /* XCTest.framework */; };
 		3A21320C180474A500916058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F1180474A500916058 /* Foundation.framework */; };
 		3A21320D180474A500916058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F5180474A500916058 /* UIKit.framework */; };
-		3A213215180474A500916058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A213213180474A500916058 /* InfoPlist.strings */; };
-		3A213217180474A500916058 /* AlertifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A213216180474A500916058 /* AlertifyTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +43,6 @@
 		3A213203180474A500916058 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A213209180474A500916058 /* AlertifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A21320A180474A500916058 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3A213212180474A500916058 /* AlertifyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlertifyTests-Info.plist"; sourceTree = "<group>"; };
-		3A213214180474A500916058 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3A213216180474A500916058 /* AlertifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertifyTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				3A2131F7180474A500916058 /* Alertify */,
-				3A213210180474A500916058 /* AlertifyTests */,
 				3A2131F0180474A500916058 /* Frameworks */,
 				3A2131EF180474A500916058 /* Products */,
 			);
@@ -122,24 +116,6 @@
 				3A2131FA180474A500916058 /* InfoPlist.strings */,
 				3A2131FD180474A500916058 /* main.m */,
 				3A2131FF180474A500916058 /* Alertify-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3A213210180474A500916058 /* AlertifyTests */ = {
-			isa = PBXGroup;
-			children = (
-				3A213216180474A500916058 /* AlertifyTests.m */,
-				3A213211180474A500916058 /* Supporting Files */,
-			);
-			path = AlertifyTests;
-			sourceTree = "<group>";
-		};
-		3A213211180474A500916058 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3A213212180474A500916058 /* AlertifyTests-Info.plist */,
-				3A213213180474A500916058 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -229,7 +205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A213215180474A500916058 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +224,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A213217180474A500916058 /* AlertifyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +242,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A2131FB180474A500916058 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3A213213180474A500916058 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A213214180474A500916058 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
