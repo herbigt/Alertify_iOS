@@ -14,20 +14,7 @@
 		3A2131FE180474A500916058 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2131FD180474A500916058 /* main.m */; };
 		3A213202180474A500916058 /* HPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A213201180474A500916058 /* HPAppDelegate.m */; };
 		3A213204180474A500916058 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A213203180474A500916058 /* Images.xcassets */; };
-		3A21320B180474A500916058 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A21320A180474A500916058 /* XCTest.framework */; };
-		3A21320C180474A500916058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F1180474A500916058 /* Foundation.framework */; };
-		3A21320D180474A500916058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F5180474A500916058 /* UIKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3A21320E180474A500916058 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A2131E6180474A500916058 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3A2131ED180474A500916058;
-			remoteInfo = Alertify;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A2131EE180474A500916058 /* Alertify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alertify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +28,6 @@
 		3A213200180474A500916058 /* HPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPAppDelegate.h; sourceTree = "<group>"; };
 		3A213201180474A500916058 /* HPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPAppDelegate.m; sourceTree = "<group>"; };
 		3A213203180474A500916058 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3A213209180474A500916058 /* AlertifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A21320A180474A500916058 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -53,16 +39,6 @@
 				3A2131F4180474A500916058 /* CoreGraphics.framework in Frameworks */,
 				3A2131F6180474A500916058 /* UIKit.framework in Frameworks */,
 				3A2131F2180474A500916058 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3A213206180474A500916058 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A21320B180474A500916058 /* XCTest.framework in Frameworks */,
-				3A21320D180474A500916058 /* UIKit.framework in Frameworks */,
-				3A21320C180474A500916058 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				3A2131EE180474A500916058 /* Alertify.app */,
-				3A213209180474A500916058 /* AlertifyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,24 +115,6 @@
 			productReference = 3A2131EE180474A500916058 /* Alertify.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3A213208180474A500916058 /* AlertifyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3A21321D180474A600916058 /* Build configuration list for PBXNativeTarget "AlertifyTests" */;
-			buildPhases = (
-				3A213205180474A500916058 /* Sources */,
-				3A213206180474A500916058 /* Frameworks */,
-				3A213207180474A500916058 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3A21320F180474A500916058 /* PBXTargetDependency */,
-			);
-			name = AlertifyTests;
-			productName = AlertifyTests;
-			productReference = 3A213209180474A500916058 /* AlertifyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,11 +124,6 @@
 				CLASSPREFIX = HP;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Hans Pinckaers";
-				TargetAttributes = {
-					3A213208180474A500916058 = {
-						TestTargetID = 3A2131ED180474A500916058;
-					};
-				};
 			};
 			buildConfigurationList = 3A2131E9180474A500916058 /* Build configuration list for PBXProject "Alertify" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -186,7 +138,6 @@
 			projectRoot = "";
 			targets = (
 				3A2131ED180474A500916058 /* Alertify */,
-				3A213208180474A500916058 /* AlertifyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,13 +149,6 @@
 			files = (
 				3A2131FC180474A500916058 /* InfoPlist.strings in Resources */,
 				3A213204180474A500916058 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3A213207180474A500916058 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,22 +164,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A213205180474A500916058 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3A21320F180474A500916058 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3A2131ED180474A500916058 /* Alertify */;
-			targetProxy = 3A21320E180474A500916058 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3A2131FA180474A500916058 /* InfoPlist.strings */ = {
@@ -347,48 +276,6 @@
 			};
 			name = Release;
 		};
-		3A21321E180474A600916058 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Alertify.app/Alertify";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Alertify/Alertify-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "AlertifyTests/AlertifyTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3A21321F180474A600916058 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Alertify.app/Alertify";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Alertify/Alertify-Prefix.pch";
-				INFOPLIST_FILE = "AlertifyTests/AlertifyTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -406,14 +293,6 @@
 			buildConfigurations = (
 				3A21321B180474A600916058 /* Debug */,
 				3A21321C180474A600916058 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		3A21321D180474A600916058 /* Build configuration list for PBXNativeTarget "AlertifyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3A21321E180474A600916058 /* Debug */,
-				3A21321F180474A600916058 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
