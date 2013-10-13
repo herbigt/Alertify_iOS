@@ -64,6 +64,7 @@ static NSString * CellIdentifier = @"CellIdentifier";
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:cell.bounds];
         scrollView.contentSize = CGSizeMake(cell.bounds.size.width, cell.bounds.size.height);
         scrollView.alwaysBounceHorizontal = YES;
+        scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
         [cell.contentView addSubview:scrollView];
 
         UIView *dragView = [[UIView alloc] initWithFrame:cell.bounds];
