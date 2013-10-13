@@ -23,68 +23,14 @@
         
         self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
         self.visibleIndexPathsSet = [NSMutableSet set];
-        [self addObserver:self forKeyPath:@"collectionView" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"collectionView"])
-    {
-        if (self.collectionView != nil)
-        {
-            [self setupCollectionView];
-        }
-    }
-}
-
-- (void)setupCollectionView
-{
-    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                                                           action:@selector(handlePanGesture:)];
-    panGestureRecognizer.delegate = self;
-    [self.collectionView addGestureRecognizer:panGestureRecognizer];
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    return YES;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-    return YES;
-}
-
-- (void)handlePanGesture:(UIPanGestureRecognizer *)gestureRecognizer
-{
-    switch (gestureRecognizer.state) {
-        case UIGestureRecognizerStateBegan:
-        case UIGestureRecognizerStateChanged: {
-            
-        } break;
-        case UIGestureRecognizerStateCancelled:
-        case UIGestureRecognizerStateEnded: {
-
-        } break;
-        default: {
-            // Do nothing...
-        } break;
-    }
 }
 
 - (void)prepareLayout
 {
     [super prepareLayout];
     
-    // Need to overflow our actual visible rect slightly to avoid flickering.
-//    CGRect visibleRect = CGRectInset((CGRect){.origin = self.collectionView.bounds.origin, .size = self.collectionView.frame.size}, -100, -100);
     CGSize contentSize = self.collectionView.contentSize;
     NSArray *items = [super layoutAttributesForElementsInRect:
                       CGRectMake(0.0f, 0.0f, contentSize.width, contentSize.height)];
