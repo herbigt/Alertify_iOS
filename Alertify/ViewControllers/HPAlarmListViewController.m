@@ -28,6 +28,8 @@ static NSString * CellIdentifier = @"CellIdentifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.collectionView.alwaysBounceVertical = YES;
+    self.collectionView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
     [self.collectionView registerClass:[UICollectionViewCell class]
             forCellWithReuseIdentifier:CellIdentifier];
     
@@ -48,7 +50,7 @@ static NSString * CellIdentifier = @"CellIdentifier";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -58,20 +60,22 @@ static NSString * CellIdentifier = @"CellIdentifier";
                                   forIndexPath:indexPath];
     
 
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:(CGRect){{0,0}, {cell.bounds.size.width, cell.bounds.size.height}}];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:cell.bounds];
     scrollView.contentSize = CGSizeMake(cell.bounds.size.width, cell.bounds.size.height);
     scrollView.alwaysBounceHorizontal = YES;
     [cell addSubview:scrollView];
 
     UIView *dragView = [[UIView alloc] initWithFrame:cell.bounds];
-    
-    if(indexPath.row % 2)
-    {
-        dragView.backgroundColor = [UIColor redColor];
-    }
-    else {
-        dragView.backgroundColor = [UIColor greenColor];
-    }
+    dragView.backgroundColor = [UIColor colorWithRed:0.686 green:0.784 blue:0.718 alpha:1.000];
+
+    UIView *highlight = [[UIView alloc] initWithFrame:(CGRect){{0,0}, {cell.bounds.size.width, 1}}];
+    highlight.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.25f];
+    [dragView addSubview:highlight];
+
+    UIView *shadow = [[UIView alloc] initWithFrame:(CGRect){{0, cell.bounds.size.height - 1}, {cell.bounds.size.width, 1}}];
+    shadow.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.25f];
+    [dragView addSubview:shadow];
+
     [scrollView addSubview:dragView];
     
     return cell;
