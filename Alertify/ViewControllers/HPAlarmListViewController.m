@@ -67,7 +67,7 @@ static NSString * CellIdentifier = @"CellIdentifier";
         [cell.contentView addSubview:scrollView];
 
         UIView *dragView = [[UIView alloc] initWithFrame:cell.bounds];
-        dragView.backgroundColor = [UIColor colorWithRed:0.686 green:0.784 blue:0.718 alpha:1.000];
+        dragView.backgroundColor = [UIColor colorWithRed:0.682 green:0.776 blue:0.714 alpha:1.000];
 
         UIView *highlight = [[UIView alloc] initWithFrame:(CGRect){{0,0}, {cell.bounds.size.width, 1}}];
         highlight.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.25f];
