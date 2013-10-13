@@ -58,13 +58,21 @@ static NSString * CellIdentifier = @"CellIdentifier";
                                   forIndexPath:indexPath];
     
 
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:(CGRect){{0,0}, {cell.bounds.size.width, cell.bounds.size.height}}];
+    scrollView.contentSize = CGSizeMake(cell.bounds.size.width, cell.bounds.size.height);
+    scrollView.alwaysBounceHorizontal = YES;
+    [cell addSubview:scrollView];
+
+    UIView *dragView = [[UIView alloc] initWithFrame:cell.bounds];
+    
     if(indexPath.row % 2)
     {
-        cell.backgroundColor = [UIColor redColor];
+        dragView.backgroundColor = [UIColor redColor];
     }
     else {
-        cell.backgroundColor = [UIColor greenColor];
+        dragView.backgroundColor = [UIColor greenColor];
     }
+    [scrollView addSubview:dragView];
     
     return cell;
 }
