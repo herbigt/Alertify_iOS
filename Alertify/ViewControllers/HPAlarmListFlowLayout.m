@@ -18,7 +18,7 @@
     {
         self.minimumInteritemSpacing = 10;
         self.minimumLineSpacing = 0;
-        self.itemSize = CGSizeMake(320, 55);
+        self.itemSize = CGSizeMake(320, 75);
         self.sectionInset = UIEdgeInsetsMake(0, 0, 64, 0);
         
         self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];

@@ -7,6 +7,7 @@
 //
 
 #import "HPAlarmListViewController.h"
+#import "ClockView.h"
 
 static NSString * CellIdentifier = @"CellIdentifier";
 
@@ -77,6 +78,26 @@ static NSString * CellIdentifier = @"CellIdentifier";
         UIView *shadow = [[UIView alloc] initWithFrame:(CGRect){{0, cell.bounds.size.height - 1}, {cell.bounds.size.width, 1}}];
         shadow.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.25f];
         [dragView addSubview:shadow];
+
+        ClockView *clockView = [[ClockView alloc] initWithFrame:CGRectMake(10, 17, 40, 40)];
+        [clockView updateToDate:[NSDate date]];
+        [dragView addSubview:clockView];
+
+        UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 16, 320, 18)];
+        timeLabel.text = @"08:30";
+        timeLabel.textAlignment = NSTextAlignmentCenter;
+        timeLabel.backgroundColor= [UIColor clearColor];
+        timeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:19.0f];
+        timeLabel.textColor = [UIColor whiteColor];
+        [dragView addSubview:timeLabel];
+
+        UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 36, 320, 25)];
+        descriptionLabel.text = @"Hey Wake up!";
+        descriptionLabel.textAlignment = NSTextAlignmentCenter;
+        descriptionLabel.backgroundColor= [UIColor clearColor];
+        descriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:15.0f];
+        descriptionLabel.textColor = [UIColor whiteColor];
+        [dragView addSubview:descriptionLabel];
 
         [scrollView addSubview:dragView];
     }

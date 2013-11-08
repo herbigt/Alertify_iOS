@@ -1,0 +1,3 @@
+[submodule "ClockView"]
+	path = ClockView
+	url = git@github.com:HansPinckaers/ClockView.git
