@@ -62,6 +62,12 @@ static NSString * CellIdentifier = @"CellIdentifier";
     
     if(cell.contentView.subviews.count == 0)
     {
+        UIImageView *accept = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"accept@2x.png"]];
+        accept.frame = CGRectMake(20, 23, 28, 26);
+        accept.tag = 1;
+        accept.alpha = 0.0f;
+        [cell.contentView addSubview:accept];
+
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:cell.bounds];
         scrollView.contentSize = CGSizeMake(cell.bounds.size.width, cell.bounds.size.height);
         scrollView.alwaysBounceHorizontal = YES;
@@ -99,9 +105,17 @@ static NSString * CellIdentifier = @"CellIdentifier";
         descriptionLabel.textColor = [UIColor whiteColor];
         [dragView addSubview:descriptionLabel];
 
+        scrollView.delegate = self;
+
         [scrollView addSubview:dragView];
     }
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    UIImageView *accept = [[scrollView superview] viewWithTag:1];
+    accept.alpha = MIN(-scrollView.contentOffset.x / 72, 1);
 }
 
 - (void)didReceiveMemoryWarning
