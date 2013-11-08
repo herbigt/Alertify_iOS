@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223490E4B67CC6B193D23FBD /* accept@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22349A2D98939EF2B59923CA /* accept@2x.png */; };
 		223499CAE5208D63504EFB39 /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223498CFE9AB3533B1DBFCEC /* ClockView.m */; };
 		3A2131F2180474A500916058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F1180474A500916058 /* Foundation.framework */; };
 		3A2131F4180474A500916058 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F3180474A500916058 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		223496508162147973EB7CA1 /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClockView.h; path = ClockView/clock/Classes/ClockView.h; sourceTree = SOURCE_ROOT; };
 		223498CFE9AB3533B1DBFCEC /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClockView.m; path = ClockView/clock/Classes/ClockView.m; sourceTree = SOURCE_ROOT; };
+		22349A2D98939EF2B59923CA /* accept@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accept@2x.png"; sourceTree = SOURCE_ROOT; };
 		3A2131EE180474A500916058 /* Alertify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alertify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2131F1180474A500916058 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A2131F3180474A500916058 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +97,7 @@
 				3A213201180474A500916058 /* HPAppDelegate.m */,
 				3A213203180474A500916058 /* Images.xcassets */,
 				3A2131F8180474A500916058 /* Supporting Files */,
+				22349A2D98939EF2B59923CA /* accept@2x.png */,
 			);
 			path = Alertify;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				3A2131FC180474A500916058 /* InfoPlist.strings in Resources */,
 				3A213204180474A500916058 /* Images.xcassets in Resources */,
+				223490E4B67CC6B193D23FBD /* accept@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
