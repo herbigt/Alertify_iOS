@@ -13,5 +13,7 @@
 @property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
 @property (nonatomic, strong) NSMutableSet *visibleIndexPathsSet;
 @property (nonatomic, assign) CGFloat latestDelta;
+@property (nonatomic, assign) CGFloat damping;
+@property (nonatomic, assign) CGFloat frequence;
 
 @end

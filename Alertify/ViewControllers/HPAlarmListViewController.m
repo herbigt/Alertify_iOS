@@ -8,6 +8,7 @@
 
 #import "HPAlarmListViewController.h"
 #import "ClockView.h"
+#import "HPAlarmListFlowLayout.h"
 
 static NSString * CellIdentifier = @"CellIdentifier";
 
@@ -34,6 +35,30 @@ static NSString * CellIdentifier = @"CellIdentifier";
     [self.collectionView registerClass:[UICollectionViewCell class]
             forCellWithReuseIdentifier:CellIdentifier];
     
+//    UISlider *damping = [[UISlider alloc] initWithFrame:CGRectMake(10, 480, 310, 10)];
+//    damping.minimumValue = 0.0f;
+//    damping.maximumValue = 10.0f;
+//    [damping addTarget:self action:@selector(dampingChanged:) forControlEvents:UIControlEventValueChanged];
+//    [self.view addSubview:damping];
+//    
+//    UISlider *freq = [[UISlider alloc] initWithFrame:CGRectMake(10, 520, 310, 10)];
+//    freq.minimumValue = 0.0f;
+//    freq.maximumValue = 25.0f;
+//    [freq addTarget:self action:@selector(frequencyChanged:) forControlEvents:UIControlEventValueChanged];
+//    [self.view addSubview:freq];
+}
+
+- (void)dampingChanged:(UISlider *)sender
+{
+    NSLog(@"damping: %f", sender.value);
+    [(HPAlarmListFlowLayout *)self.collectionViewLayout setDamping:sender.value];
+}
+
+- (void)frequencyChanged:(UISlider *)sender
+{
+    NSLog(@"frequency: %f", sender.value);
+    [(HPAlarmListFlowLayout *)self.collectionViewLayout setFrequence:sender.value];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -78,7 +103,7 @@ static NSString * CellIdentifier = @"CellIdentifier";
         dragView.backgroundColor = [UIColor colorWithRed:0.682 green:0.776 blue:0.714 alpha:1.000];
 
         UIView *highlight = [[UIView alloc] initWithFrame:(CGRect){{0,0}, {cell.bounds.size.width, 1}}];
-        highlight.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.25f];
+        highlight.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.25f];
         [dragView addSubview:highlight];
 
         UIView *shadow = [[UIView alloc] initWithFrame:(CGRect){{0, cell.bounds.size.height - 1}, {cell.bounds.size.width, 1}}];

@@ -60,12 +60,27 @@
             {
                 UIAttachmentBehavior *behaviour = [[UIAttachmentBehavior alloc] initWithItem:obj attachedToItem:prevObjc];
                 behaviour.damping = 3.0f;
-                behaviour.frequency = 5.5f;
+                behaviour.frequency = 5.0f;
+                behaviour.length = 73.0f;
                 [self.dynamicAnimator addBehavior:behaviour];
             }
             prevObjc = obj;
         }
     }
+}
+
+- (void)setDamping:(CGFloat)damping
+{
+    for (UIAttachmentBehavior *behavior in self.dynamicAnimator.behaviors)
+        if ([behavior isKindOfClass:[UIAttachmentBehavior class]])
+            behavior.damping = damping;
+}
+
+- (void)setFrequence:(CGFloat)frequence
+{
+    for (UIAttachmentBehavior *behavior in self.dynamicAnimator.behaviors)
+        if ([behavior isKindOfClass:[UIAttachmentBehavior class]])
+            behavior.frequency = frequence;
 }
 
 -(NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
@@ -114,7 +129,7 @@
     {
         attachedToFinger.anchorPoint = CGPointMake(0, [[(UICollectionViewLayoutAttributes *)[attachedToFinger.items firstObject] indexPath] row] * 75.0f + 37.5f);
         attachedToFinger.damping = 3.0f;
-        attachedToFinger.frequency = 5.5f;
+        attachedToFinger.frequency = 5.0f;
 
         for(id<UIDynamicItem> obj in items)
             [self.dynamicAnimator updateItemUsingCurrentState:obj];
