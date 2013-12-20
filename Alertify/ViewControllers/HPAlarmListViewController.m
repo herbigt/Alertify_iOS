@@ -76,7 +76,7 @@ static NSString * CellIdentifier = @"CellIdentifier";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5;
+    return 7;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -123,7 +123,8 @@ static NSString * CellIdentifier = @"CellIdentifier";
         [dragView addSubview:timeLabel];
 
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 36, 320, 25)];
-        descriptionLabel.text = @"Hey Wake up!";
+        if(indexPath.row == 0) descriptionLabel.text = @"Release to add alarm";
+        else descriptionLabel.text = @"Wake up!";
         descriptionLabel.textAlignment = NSTextAlignmentCenter;
         descriptionLabel.backgroundColor= [UIColor clearColor];
         descriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:15.0f];
@@ -139,7 +140,7 @@ static NSString * CellIdentifier = @"CellIdentifier";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    UIImageView *accept = [[scrollView superview] viewWithTag:1];
+    UIImageView *accept = (UIImageView *)[[scrollView superview] viewWithTag:1];
     accept.alpha = MIN(-scrollView.contentOffset.x / 72, 1);
 }
 

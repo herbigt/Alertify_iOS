@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPAlarmListFlowLayout : UICollectionViewFlowLayout <UIGestureRecognizerDelegate>
+@interface HPAlarmListFlowLayout : UICollectionViewLayout <UIGestureRecognizerDelegate, UIDynamicAnimatorDelegate>
 
 @property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
 @property (nonatomic, strong) NSMutableSet *visibleIndexPathsSet;
 @property (nonatomic, assign) CGFloat latestDelta;
 @property (nonatomic, assign) CGFloat damping;
 @property (nonatomic, assign) CGFloat frequence;
+
+@property (nonatomic, assign) BOOL containsAddItem;
 
 @end
