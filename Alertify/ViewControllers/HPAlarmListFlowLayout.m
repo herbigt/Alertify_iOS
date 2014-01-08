@@ -16,6 +16,7 @@
     UISnapBehavior *topBehaviour;
     UICollectionViewLayoutAttributes *firstObj;
     UICollisionBehavior *mainCollisionBehavior;
+    UIGravityBehavior *gravity;
 }
 
 - (id)init
@@ -44,7 +45,7 @@
     {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
         UICollectionViewLayoutAttributes *itemAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-        itemAttributes.frame = CGRectMake(0, 73.0f*i, 320, 75);
+        itemAttributes.frame = CGRectMake(0, 73.0f*(i-1)-30, 320, 75);
         if (itemAttributes) [items addObject:itemAttributes];
     }
     
@@ -92,8 +93,7 @@
             prevObjc = obj;
         }
 
-        UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[items firstObject]]];
-        [self.dynamicAnimator addBehavior:gravity];
+        gravity = [[UIGravityBehavior alloc] initWithItems:@[[items firstObject]]];
     }
 }
 
@@ -149,6 +149,8 @@
     CGPoint translation = [panGestureRecognizer translationInView:self.collectionView];
     if(panGestureRecognizer.state == UIGestureRecognizerStateBegan)
     {
+        if (!gravity.dynamicAnimator)
+            [self.dynamicAnimator addBehavior:gravity];
         [self.dynamicAnimator removeBehavior:attachedToFinger];
         [self.dynamicAnimator removeBehavior:topBehaviour];
         topBehaviour = nil;
@@ -181,10 +183,10 @@
         attachedToFinger.damping = 3.0f;
         attachedToFinger.frequency = 5.0f;
 
-
-
         for(id<UIDynamicItem> obj in items)
             [self.dynamicAnimator updateItemUsingCurrentState:obj];
+
+        [self.delegate alarmListFlowLayout:self didStopDraggingWithOffset:CGPointMake(0, firstObj.frame.origin.y)];
     }
 }
 

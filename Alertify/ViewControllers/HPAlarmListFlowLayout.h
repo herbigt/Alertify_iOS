@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class HPAlarmListFlowLayout;
+
+@protocol HPAlarmListFlowLayoutDelegate <NSObject>
+
+- (void)alarmListFlowLayout:(HPAlarmListFlowLayout *)layout didStopDraggingWithOffset:(CGPoint)offset;
+
+@end
+
 @interface HPAlarmListFlowLayout : UICollectionViewLayout <UIGestureRecognizerDelegate, UIDynamicAnimatorDelegate>
 
 @property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
@@ -17,5 +25,6 @@
 @property (nonatomic, assign) CGFloat frequence;
 
 @property (nonatomic, assign) BOOL containsAddItem;
+@property (nonatomic, assign) id <HPAlarmListFlowLayoutDelegate> delegate;
 
 @end

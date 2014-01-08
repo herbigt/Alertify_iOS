@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		223490E4B67CC6B193D23FBD /* accept@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22349A2D98939EF2B59923CA /* accept@2x.png */; };
 		223499CAE5208D63504EFB39 /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223498CFE9AB3533B1DBFCEC /* ClockView.m */; };
+		22349CF5675875DAD2354FF5 /* HPNewTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223492BC219D469D65482304 /* HPNewTimerViewController.m */; };
 		3A2131F2180474A500916058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F1180474A500916058 /* Foundation.framework */; };
 		3A2131F4180474A500916058 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F3180474A500916058 /* CoreGraphics.framework */; };
 		3A2131F6180474A500916058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2131F5180474A500916058 /* UIKit.framework */; };
@@ -22,8 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		223492BC219D469D65482304 /* HPNewTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPNewTimerViewController.m; path = ViewControllers/HPNewTimerViewController.m; sourceTree = "<group>"; };
 		223496508162147973EB7CA1 /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClockView.h; path = ClockView/clock/Classes/ClockView.h; sourceTree = SOURCE_ROOT; };
 		223498CFE9AB3533B1DBFCEC /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClockView.m; path = ClockView/clock/Classes/ClockView.m; sourceTree = SOURCE_ROOT; };
+		2234990B6B8899AFE3CD626B /* HPNewTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPNewTimerViewController.h; path = ViewControllers/HPNewTimerViewController.h; sourceTree = "<group>"; };
 		22349A2D98939EF2B59923CA /* accept@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accept@2x.png"; sourceTree = SOURCE_ROOT; };
 		3A2131EE180474A500916058 /* Alertify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alertify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2131F1180474A500916058 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				3A21322718047BC800916058 /* HPAlarmListViewController.m */,
 				3A21322918047D9F00916058 /* HPAlarmListFlowLayout.h */,
 				3A21322A18047D9F00916058 /* HPAlarmListFlowLayout.m */,
+				2234990B6B8899AFE3CD626B /* HPNewTimerViewController.h */,
+				223492BC219D469D65482304 /* HPNewTimerViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				3A21322818047BC800916058 /* HPAlarmListViewController.m in Sources */,
 				3A2131FE180474A500916058 /* main.m in Sources */,
 				223499CAE5208D63504EFB39 /* ClockView.m in Sources */,
+				22349CF5675875DAD2354FF5 /* HPNewTimerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +254,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hans Pinckaers (PZ5AJLF6ZA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -266,6 +272,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1576FEF3-92C1-4AB2-BDAA-150647F5EC06";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -287,7 +294,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hans Pinckaers (PZ5AJLF6ZA)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -298,6 +305,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "1576FEF3-92C1-4AB2-BDAA-150647F5EC06";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -348,6 +356,7 @@
 				3A21321C180474A600916058 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

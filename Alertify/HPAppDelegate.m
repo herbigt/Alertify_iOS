@@ -15,12 +15,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor blackColor];
-    
+
     HPAlarmListFlowLayout *layout = [[HPAlarmListFlowLayout alloc] init];
     HPAlarmListViewController *list = [[HPAlarmListViewController alloc] initWithCollectionViewLayout:layout];
-    self.window.rootViewController = list;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:list];
+    navigationController.navigationBarHidden = YES;
+
+    self.window.rootViewController = navigationController;
     
     [self.window makeKeyAndVisible];
     return YES;
